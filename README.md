@@ -1,69 +1,73 @@
-# React + TypeScript + Vite
+# Alpha Contabilidade & Consultoria — Site Institucional
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site institucional fictício para a empresa Alpha Contabilidade & Consultoria, construído com React + Vite e estilizado com TailwindCSS. O layout é responsivo (mobile first) e segue estética corporativa (azul escuro, branco e cinza), com componentes reutilizáveis.
 
-Currently, two official plugins are available:
+### Principais seções
+- Navbar fixa com âncoras
+- Hero com imagem de fundo e CTA “Solicite uma consultoria”
+- Sobre Nós (texto + imagem)
+- Serviços (grid com 4 cards)
+- Depoimentos (3 cards)
+- Contato (formulário básico + dados)
+- Footer com redes sociais e botões flutuantes: “Solicitar Orçamento” e “Voltar ao topo”
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias
+- React + Vite (TypeScript)
+- TailwindCSS
+- ESLint configurado
 
-## Expanding the ESLint configuration
+## Como rodar localmente
+Pré‑requisitos: Node.js LTS e npm.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+git clone <seu-repo>
+cd DIREITO
+npm install
+npm run dev
+```
+Aplicação em `http://localhost:5173`.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Build de produção e preview:
+```bash
+npm run build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Estrutura de pastas (resumo)
+```txt
+src/
+  components/
+    About.tsx
+    Contact.tsx
+    Footer.tsx
+    Hero.tsx
+    Navbar.tsx
+    Services.tsx
+    Testimonials.tsx
+  App.tsx
+  main.tsx
+  index.css
+tailwind.config.js
+postcss.config.js
+index.html
 ```
+
+## Personalização
+- Cores e tipografia: ajuste em `tailwind.config.js` em `theme.extend.colors.brand` e `fontFamily`.
+- Imagens: substitua as URLs do Unsplash nos componentes (`Hero`, `About`, etc.).
+- Textos/links: edite diretamente os componentes em `src/components`.
+
+## Deploy na Vercel
+1) Faça o build local: `npm run build` (gera `dist/`).
+2) Opção A: suba o repositório no GitHub e importe na Vercel; framework = Vite, comando de build padrão.
+3) Opção B: via CLI da Vercel (`vercel`), apontando para o projeto e deployando `dist/`.
+
+## Acessibilidade e SEO
+- HTML semântico, contrastes adequados, foco no teclado.
+- Ajuste metatags em `index.html` (título, description, OG/Twitter) conforme necessidade.
+
+## Créditos de imagens
+As imagens utilizam links do Unsplash apenas para fins demonstrativos. Substitua por imagens próprias antes do uso comercial.
+
+---
+Feito com ❤️ para demonstração de portfólio.
